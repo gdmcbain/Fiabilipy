@@ -3,12 +3,12 @@
 from distutils.core import setup
 
 setup(name='fiabilipy',
-      version='3.0',
+      version='3.1',
       description='Learn engineering reliability with python',
       long_description=open('README.md').read(),
       author='Simon Chabot, Akim Sadaoui, Vincent Lecrubier',
       author_email='contact@fiabilipy.org',
-      url='http://fiabilipy.org',
+      url='https://pythonhosted.org/fiabilipy',
       license='GPLv2+',
       keywords=('dependability', 'availability', 'reliability', 'markov'),
       requires=['numpy', 'scipy', 'sympy', 'networkx','future'],
