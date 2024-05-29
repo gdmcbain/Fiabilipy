@@ -25,7 +25,6 @@ such as the reliability, the availability, the Mean-Time-To-Failure, and so on.
 """
 from __future__ import division
 from builtins import object
-from past.utils import old_div
 
 from sympy import exp, Symbol, oo
 
@@ -154,11 +153,11 @@ class Component(object):
         """
         if self.mu == self.lambda_ == 0:
             return 1
-        a = old_div(self.mu, (self.mu + self.lambda_))
+        a = self.mu / (self.mu + self.lambda_)
         if self.initialy_avaible:
-            b = old_div(self.lambda_, (self.mu + self.lambda_))
+            b = self.lambda_ / (self.mu + self.lambda_)
         else:
-            b = old_div(- self.mu, (self.mu + self.lambda_))
+            b = - self.mu / (self.mu + self.lambda_)
 
         return a + b*exp(-(self.lambda_ + self.mu) * t)
 
@@ -182,7 +181,7 @@ class Component(object):
             >>> motor.mttf
             10000.0
         """
-        return old_div(1.0,self.lambda_)
+        return 1.0 / self.lambda_
 
     @property
     def mttr(self):
@@ -204,4 +203,4 @@ class Component(object):
             >>> motor.mttr
             33.333333333333336
         """
-        return old_div(1.0,self.mu)
+        return 1.0 / self.mu
