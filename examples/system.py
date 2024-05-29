@@ -1,6 +1,3 @@
-#!/usr/bin/env python2
-# -*- coding: utf-8 -*-
-
 #Copyright (C) 2013 Chabot Simon, Sadaoui Akim
 
 #This program is free software; you can redistribute it and/or modify
@@ -17,8 +14,6 @@
 #with this program; if not, write to the Free Software Foundation, Inc.,
 #51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
-from __future__ import print_function
-
 from fiabilipy import Component, System
 from matplotlib.pylab import plot, show
 
@@ -33,8 +28,8 @@ def system_example():
               | -- A2 -- | -- M1 -- |
     """
 
-    alim = [Component('A_%s' % i, 2e-4) for i in xrange(3)]
-    motors = [Component('M_%s' % i, 1e-4) for i in xrange(2)]
+    alim = [Component('A_%s' % i, 2e-4) for i in range(3)]
+    motors = [Component('M_%s' % i, 1e-4) for i in range(2)]
     S = System()
 
     S['E'] = [alim[0], alim[1], alim[2]]
