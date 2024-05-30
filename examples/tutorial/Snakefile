@@ -1,3 +1,11 @@
+rule all:
+    input: "how_to_build_a_system.png"
+    input: 
+
 rule run:
-    input: "how_to_build_a_system.py"
+    input: "{a}.py"
+    output: "{a}.png"
     shell: "python {input}"
+
+rule clean:
+    shell: "del *.png"
