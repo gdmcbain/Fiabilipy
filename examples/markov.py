@@ -1,6 +1,3 @@
-#!/usr/bin/env python2
-# -*- coding: utf-8 -*-
-
 #Copyright (C) 2013 Chabot Simon, Sadaoui Akim
 
 #This program is free software; you can redistribute it and/or modify
@@ -16,8 +13,6 @@
 #You should have received a copy of the GNU General Public License along
 #with this program; if not, write to the Free Software Foundation, Inc.,
 #51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
-
-from __future__ import print_function
 
 import pylab as p
 
@@ -48,7 +43,7 @@ def markov_example():
               u'disponible' : lambda x: any(x), #at least one
              }
 
-    for name, state in states.iteritems():
+    for name, state in states.items():
         data = [process.value(t, statefunc=state) for t in timerange]
         p.plot(timerange, data, label=name)
     p.legend()
