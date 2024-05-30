@@ -1,5 +1,5 @@
 rule all:
-    input: "system.png"
+    input: expand("{a}.png", a=["system", "markov"])
 
 rule run:
     input: "{a}.py"

@@ -1,3 +1,7 @@
+from pathlib import Path
+
+from matplotlib.pyplot import subplots
+
 from fiabilipy import Component, Markovprocess
 
 # Component and process initialization
@@ -32,3 +36,21 @@ def faulty(x):
 
 print(f"{process.value(150, available)=}")
 print(f"{process.value(1000, normal)=}")
+
+# Drawing plots
+
+states = {
+    "normal": normal,
+    "available": available,
+    "damaged": damaged,
+    "faulty": faulty,
+}
+timerange = range(0, 6000, 10)
+
+fig, ax = subplots()
+for name, func in states.items():
+    proba = [process.value(t, func) for t in timerange]
+    ax.plot(timerange, proba, label=name)
+
+ax.legend()
+fig.savefig(Path(__file__).with_suffix(".png"))
