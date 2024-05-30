@@ -32,7 +32,7 @@ from numpy import empty, ones, delete
 from sympy import exp, Symbol, oo
 from scipy.special import binom
 from itertools import combinations, chain
-from collections import Iterable
+from collections.abc import Iterable
 import networkx as nx
 
 from fiabilipy import Component
