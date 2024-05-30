@@ -3,7 +3,7 @@ How to describe a system by a Markov process
 
 fiabilipy enables the users to model a system trought a Markov process. This
 tutorial aims to introduce how fiabilipy handles the Markov modelisation. This
-introcduction is done using a example.
+introduction is done using a example.
 
 Let’s say we have a parallel-series system, represented by the following figure.
 
