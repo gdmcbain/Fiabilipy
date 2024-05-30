@@ -1,9 +1,3 @@
-#!/usr/bin/env python2
-# -*- coding: utf-8 -*-
-
-from __future__ import (unicode_literals, absolute_import, division,
-                        print_function)
-
 from fiabilipy import Voter, Component
 from sympy import Symbol, solve, exp
 
@@ -21,7 +15,7 @@ def voter_example(nmax=5, nmin=3):
             the minimum value of N (included)
 
     """
-    orders = ((M, N) for N in xrange(nmin, nmax) for M in xrange(2, N))
+    orders = ((M, N) for N in range(nmin, nmax) for M in range(2, N))
     l = Symbol('l', positive=True, null=False)
     t = Symbol('t', positive=True)
     x = Symbol('x')

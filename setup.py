@@ -3,7 +3,7 @@
 from distutils.core import setup
 
 setup(name='fiabilipy',
-      version='3.1',
+      version='3.2',
       description='Learn engineering reliability with python',
       long_description=open('README.md').read(),
       author='Simon Chabot, Akim Sadaoui, Vincent Lecrubier',

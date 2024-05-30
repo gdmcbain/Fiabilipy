@@ -563,4 +563,9 @@ class System(object):
             >>> p.show()
 
         """
-        nx.draw_graphviz(self._graph)
+        layer = {node: layer
+                 for layer, nodes in enumerate(nx.topological_generations(self._graph))
+                 for node in nodes}
+        nx.set_node_attributes(self._graph, layer, "layer")
+        pos = nx.multipartite_layout(self._graph, subset_key="layer")
+        nx.draw_networkx(self._graph, arrows=True, pos=pos, node_shape="s")
