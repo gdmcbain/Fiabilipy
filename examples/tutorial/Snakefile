@@ -1,6 +1,5 @@
 rule all:
-    input: "how_to_build_a_system.png"
-    input: 
+    input: "system.png"
 
 rule run:
     input: "{a}.py"
