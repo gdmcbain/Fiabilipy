@@ -19,13 +19,13 @@
 
 from __future__ import print_function, absolute_import
 from builtins import range
-import unittest2
+import unittest
 
 from random import random
 
 from fiabilipy import System, Component, Markovprocess
 
-class TestMarkov(unittest2.TestCase):
+class TestMarkov(unittest.TestCase):
 #The reliabily and the availability of systems is already tested. Let’s
 #assume they are correct for any systems.
 #The idea behind those tests is very simple. We build different systems twice :
@@ -92,4 +92,4 @@ class TestMarkov(unittest2.TestCase):
                                        self.systems[name].availability(t))
 
 if __name__ == '__main__':
-    unittest2.main()
+    unittest.main()
