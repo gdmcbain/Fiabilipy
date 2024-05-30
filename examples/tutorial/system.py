@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from matplotlib.pyplot import subplots
+from matplotlib.pyplot import subplots, show
 from sympy import Symbol
 
 from fiabilipy import Component, System
@@ -42,6 +42,9 @@ S[f] = [e, d]
 print("\n# An example of a complex system")
 print(f"{S.mttf=}")
 print(f"{S.reliability(t)=}")
+
+S.draw()
+show()
 
 # Draw graphics
 
