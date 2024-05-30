@@ -1,0 +1,3 @@
+rule run:
+    input: "how_to_build_a_system.py"
+    shell: "python {input}"
