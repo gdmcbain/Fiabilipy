@@ -18,14 +18,14 @@
 #51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
 from __future__ import print_function, absolute_import
-import unittest2
+import unittest
 
 from sympy import symbols, exp
 from networkx import DiGraph, is_isomorphic
 
 from fiabilipy import Component, Voter, System
 
-class TestComponent(unittest2.TestCase):
+class TestComponent(unittest.TestCase):
     """ Test the Component class.
     """
     def setUp(self):
@@ -48,7 +48,7 @@ class TestComponent(unittest2.TestCase):
 
     def test_maintainability(self):
         """ Check the maintainability is equals to the theorical one """
-        self.assertEqual(1 - exp(-self.mu * self.t),
+        self.assertEqual(1.0 - exp(-self.mu * self.t),
                          self.component.maintainability(self.t))
 
     def test_availability(self):
@@ -61,12 +61,12 @@ class TestComponent(unittest2.TestCase):
         self.assertEqual(availability,
                          self.component.availability(self.t))
 
-class TestVoter(unittest2.TestCase):
+class TestVoter(unittest.TestCase):
     """ Test the Voter class.
     """
     pass
 
-class TestSystem(unittest2.TestCase):
+class TestSystem(unittest.TestCase):
     """ Test the System class.
     """
 
@@ -283,4 +283,4 @@ class TestSystem(unittest2.TestCase):
         self.assertAlmostEqual(system.mttf, 29000/33.)
 
 if __name__ == '__main__':
-    unittest2.main()
+    unittest.main()
